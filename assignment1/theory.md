@@ -24,7 +24,7 @@ We use CDN because of below benefits:
 * Increasing content availability and redundancy: Its distributed.
 * Improving website security
 
-![](./assets/cdn_image.png)
+![](assets/cdn_image.png)
 
 ### Ques4. Why is React known as React?
 Ans. 
