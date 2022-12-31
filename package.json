@@ -11,5 +11,9 @@
     "url": "git@github-personal:sankita15/namaste-react.git"
   },
   "author": "Ankita Srivastava",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
