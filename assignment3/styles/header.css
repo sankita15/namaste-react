@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    background-color: #232f3e;
+    align-items: center;
+    height: 30vh;
+    border-radius: 5px;
+}
+
+.logo {
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.user {
+    border-radius: 25px;
+    background-color: white;
+    margin-right: 10px;
+}
