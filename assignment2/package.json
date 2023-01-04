@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Solution for Namaste react course",
   "scripts": {
-    "start-dev": "parcel ./assignment2/index.html",
-    "build": "parcel build ./assignment2/index.html",
+    "start-dev": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
