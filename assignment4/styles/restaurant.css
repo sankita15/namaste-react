@@ -3,34 +3,50 @@
     padding: 15px;
     border: 1px solid darkred;
     border-radius: 5px;
+    width: 25%;
+    cursor: pointer;
 }
 
 .names {
     font-family: "Apple Chancery", serif;
-    font-size: 20px;
+    font-size: 22px;
+    word-wrap: initial;
 }
 
 .categories {
     font-family: "Apple Chancery", serif;
-    font-size: 13px;
+    font-size: 15px;
+    color: grey;
 }
 
 .restaurant-info-container {
     display: flex;
+    justify-content: space-between;
     font-family: Dialog, serif;
     font-size: 15px;
+    color: grey;
     margin-top: 15px;
 }
 
 .ratings {
+    padding: 3px;
     margin-right: 3px;
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+}
+
+.separator {
+    padding: 3px;
 }
 
 .eta {
     margin-left: 3px;
     margin-right: 3px;
+    padding: 3px;
 }
 
 .estimated-cost {
+    padding: 3px;
     margin-left: 3px;
 }

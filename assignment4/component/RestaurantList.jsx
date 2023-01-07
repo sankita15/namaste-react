@@ -5,20 +5,15 @@ import {getConfigs} from "../data/getConfigs";
 
 const RestaurantList = () => {
     const configs = getConfigs();
-    const data = configs.data.restaurants;
+    const restaurants = configs.data.restaurants;
 
     return (
         <div className="restaurant-list-container">
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
-            <Restaurant restaurants={data}></Restaurant>
+            {
+                restaurants.map(restaurant => {
+                    return <Restaurant restaurant={restaurant.data}></Restaurant>
+                })
+            }
         </div>
     )
 }
