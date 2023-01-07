@@ -11,7 +11,7 @@ const RestaurantList = () => {
         <div className="restaurant-list-container">
             {
                 restaurants.map(restaurant => {
-                    return <Restaurant restaurant={restaurant.data}></Restaurant>
+                    return <Restaurant restaurant={restaurant.data} key={restaurant.data.id}></Restaurant>
                 })
             }
         </div>
