@@ -1,17 +1,19 @@
 import React from "react";
-import pizza from './../assets/pizza.jpeg'
 import './../styles/restaurant.css'
 
-const Restaurant = () => {
+const Restaurant = (data) => {
+    const { restaurants } = data;
+    const imageUrl = `https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_308,h_220,c_fill/${restaurants[0].data.cloudinaryImageId}`
+
     return (
         <div className="restaurant-container">
-            <img src={pizza} alt="pizza" height={150} width={170}/>
-            <div className="names">Pounderia Pizza</div>
-            <div className="categories">Pizzas</div>
+            <img src={imageUrl} alt="image"/>
+            <div className="names">{restaurants[0].data.name}</div>
+            <div className="categories">{restaurants[0].data.cuisines.join(', ')}</div>
             <div className="restaurant-info-container">
-                <div className="ratings">4 star</div>
-                <div className="eta">32 min</div>
-                <div className="estimated-cost">300 for 2</div>
+                <div className="ratings">{restaurants[0].data.avgRating}</div>
+                <div className="eta">{restaurants[0].data.deliveryTime} min</div>
+                <div className="estimated-cost">{restaurants[0].data.costForTwoString}</div>
             </div>
         </div>
     )
