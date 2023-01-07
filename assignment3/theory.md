@@ -32,4 +32,4 @@ Any other value will be considered as data block and will be ignored by browser.
 
 ### Ques4. {TitleComponent} vs {<TitleComponent />} vs {<TitleComponent><TitleComponent />}
 Ans. First one will not display the component. If we have create a React element naming TitleComponent then this way we can render the react element.
-Second and third way are same way for rendering the TitleComponent inside JSX
+Second and third way are a same way for rendering the TitleComponent inside JSX
