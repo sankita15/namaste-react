@@ -1,0 +1,36 @@
+.restaurant-container {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid darkred;
+    border-radius: 5px;
+}
+
+.names {
+    font-family: "Apple Chancery", serif;
+    font-size: 20px;
+}
+
+.categories {
+    font-family: "Apple Chancery", serif;
+    font-size: 13px;
+}
+
+.restaurant-info-container {
+    display: flex;
+    font-family: Dialog, serif;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.ratings {
+    margin-right: 3px;
+}
+
+.eta {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.estimated-cost {
+    margin-left: 3px;
+}

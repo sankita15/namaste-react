@@ -1,18 +1,26 @@
-.container {
+.header-container {
     display: flex;
-    background-color: #232f3e;
-    align-items: center;
-    height: 30vh;
+    justify-content: space-between;
+    border: 1px solid darkred;
     border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .logo {
-    padding-left: 25px;
-    padding-top: 25px;
+    margin-left: 20px;
 }
 
-.user {
-    border-radius: 25px;
-    background-color: white;
-    margin-right: 10px;
+.nav-items {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin-right: 20px;
+    font-size: 20px;
+    font-family: "Apple Chancery", serif;
+}
+
+.nav-items > li {
+    padding: 18px;
+    color: darkred;
 }

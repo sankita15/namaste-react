@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import HeaderComponent from "./HeaderComponent";
+import AppLayout from "./AppLayout";
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-root.render(<HeaderComponent/>);
+root.render(<AppLayout/>);
