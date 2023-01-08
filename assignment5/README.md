@@ -1,3 +1,3 @@
-### Daawat Food Delivery App
+### Daawat Food Delivery App With Search Feature
 
-![Daawat App](./assets/homePage.png "Title")
+![Daawat App](./assets/daawat_search.png "Title")
