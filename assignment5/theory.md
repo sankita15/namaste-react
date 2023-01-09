@@ -10,11 +10,11 @@ Default export: When we have to export single value from a file we can do defaul
 ```jsx
 import xyz from '.xyz'
 ```
-star as export(* as export): This is also similar to default export but here we can rename the imported data.
+star as export(* as export): This is also similar to named export but here we can rename the imported data.
 ```jsx
 import * as abc from '.xyz'
 ```
-now we can use **abc** instead of **xyz**
+now we can use **abc.xyz** instead of **xyz**
 
 
 ### Ques2. What is the importance of config.js or constant.js file?
