@@ -1,3 +1,7 @@
-### Daawat Food Delivery App With Search Feature
+### Daawat Food Delivery App With Search, Login, and Shimmer Features
 
-![Daawat App](./assets/daawat_search.png "Title")
+Daawat Loading State
+![Daawat App Loader](./assets/daawat_loader.png "Title")
+
+Daawat Home page 
+![Daawat App](./assets/daawat_homepage.png "Title")
