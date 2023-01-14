@@ -2,11 +2,13 @@ import React, {useEffect, useState} from "react";
 import SearchComponent from "./SearchComponent";
 import {Restaurant} from "./Restaurant";
 import './../styles/body.css';
+import ShimmerLoader from "./ShimmerLoader";
 
 const Body = () => {
     const [searchText, setSearchText] = useState("");
     const [restaurants, setRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         getRestaurants()
@@ -22,6 +24,7 @@ const Body = () => {
         }
         setRestaurants(jsonResponse.data?.cards[2]?.data?.data?.cards)
         setFilteredRestaurants(jsonResponse.data?.cards[2]?.data?.data?.cards);
+        setIsLoading(false);
     }
 
     const handleChange = (event) => setSearchText(event.target.value)
@@ -35,13 +38,15 @@ const Body = () => {
     return (
         <div className="body-container">
             <SearchComponent searchText={searchText} onChange={handleChange} onClick={handleClick}/>
-            <div className="restaurant-list-container">
+            {!isLoading ? <div className="restaurant-list-container">
                 {
                     filteredRestaurants.map(filteredRestaurant => {
                         return <Restaurant restaurant={filteredRestaurant.data} key={filteredRestaurant.data.id}></Restaurant>
                     })
                 }
-            </div>
+            </div> :
+                <ShimmerLoader />
+            }
         </div>
     )
 }
