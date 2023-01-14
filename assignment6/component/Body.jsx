@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from "react";
 import SearchComponent from "./SearchComponent";
 import {Restaurant} from "./Restaurant";
-import {CONFIG} from "../data/constants";
 import './../styles/body.css';
 
 const Body = () => {
     const [searchText, setSearchText] = useState("");
-    const restaurantsData = CONFIG.restaurants;
     const [restaurants, setRestaurants] = useState([]);
+    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
     useEffect(() => {
         getRestaurants()
@@ -22,12 +21,13 @@ const Body = () => {
             console.warn("Error occured")
         }
         setRestaurants(jsonResponse.data?.cards[2]?.data?.data?.cards)
+        setFilteredRestaurants(jsonResponse.data?.cards[2]?.data?.data?.cards);
     }
 
     const handleChange = (event) => setSearchText(event.target.value)
 
     const handleClick = () => {
-        setRestaurants(restaurantsData.filter(restaurant => {
+        setFilteredRestaurants(restaurants.filter(restaurant => {
             return restaurant.data.name.toLowerCase().includes(searchText);
         }))
     }
@@ -37,8 +37,8 @@ const Body = () => {
             <SearchComponent searchText={searchText} onChange={handleChange} onClick={handleClick}/>
             <div className="restaurant-list-container">
                 {
-                    restaurants.map(restaurant => {
-                        return <Restaurant restaurant={restaurant.data} key={restaurant.data.id}></Restaurant>
+                    filteredRestaurants.map(filteredRestaurant => {
+                        return <Restaurant restaurant={filteredRestaurant.data} key={filteredRestaurant.data.id}></Restaurant>
                     })
                 }
             </div>
