@@ -25,3 +25,17 @@
     padding: 18px;
     color: darkred;
 }
+
+.login-btn {
+    height: 42px;
+    width: 95px;
+    padding: 1px 2px;
+    background-color: darkred;
+    opacity: 90%;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto 20px auto 10px;
+}

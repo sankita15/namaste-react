@@ -20,7 +20,7 @@ const Body = () => {
             response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.444898&lng=78.362345&page_type=DESKTOP_WEB_LISTING')
             jsonResponse = response.ok ? await response.json() : await Promise.reject(response.status)
         } catch (e) {
-            console.warn("Error occured")
+            console.warn("Error occurred")
         }
         setRestaurants(jsonResponse.data?.cards[2]?.data?.data?.cards)
         setFilteredRestaurants(jsonResponse.data?.cards[2]?.data?.data?.cards);
