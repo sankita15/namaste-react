@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import SearchComponent from "./SearchComponent";
 import {Restaurant} from "./Restaurant";
 import './../styles/body.css';
-import ShimmerLoader from "./ShimmerLoader";
+import Loader from "./Loader";
 
 const Body = () => {
     const [searchText, setSearchText] = useState("");
@@ -38,15 +38,16 @@ const Body = () => {
     return (
         <div className="body-container">
             <SearchComponent searchText={searchText} onChange={handleChange} onClick={handleClick}/>
-            {!isLoading ? <div className="restaurant-list-container">
+            <div className="restaurant-list-container">
                 {
-                    filteredRestaurants.map(filteredRestaurant => {
-                        return <Restaurant restaurant={filteredRestaurant.data} key={filteredRestaurant.data.id}></Restaurant>
+                    isLoading ? <Loader /> :
+                    filteredRestaurants.map((filteredRestaurant) => {
+                        return <Restaurant restaurant={filteredRestaurant.data}
+                                        key={filteredRestaurant.data.id}>
+                            </Restaurant>;
                     })
                 }
-            </div> :
-                <ShimmerLoader />
-            }
+            </div>
         </div>
     )
 }
