@@ -12,13 +12,20 @@
     animation: shimmer 1s linear infinite alternate;
 }
 
-.shimmer-content {
+.shimmer-main-content {
     margin-top: 15px;
-    width: 308px;
     height: 30px;
     background-color: lightgrey;
     border-radius: 5px;
     animation: shimmer 1s linear infinite alternate;
+}
+
+.content1 {
+    width: 307px;
+}
+
+.content2 {
+    width: 160px;
 }
 
 .shimmer-restaurant-info-container {
