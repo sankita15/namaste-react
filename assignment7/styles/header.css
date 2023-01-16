@@ -21,6 +21,16 @@
     font-family: "Apple Chancery", serif;
 }
 
+.nav-items > a {
+    text-decoration: none;
+    padding: 18px;
+    color: darkred;
+}
+
+.nav-items > a:hover {
+    text-decoration: underline;
+}
+
 .nav-items > li {
     padding: 18px;
     color: darkred;

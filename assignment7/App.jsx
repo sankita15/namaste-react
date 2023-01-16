@@ -2,15 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
 import ErrorComponent from "./component/ErrorComponent";
+import About from "./component/About";
 
 
 const AppLayout = () => {
     return (
         <div>
             <Header />
-            <Body />
+            <Outlet />
         </div>
     )
 }
@@ -19,7 +20,17 @@ const appRouter = createBrowserRouter([
     {
         path: "/",
         element: <AppLayout />,
-        errorElement: <ErrorComponent />
+        errorElement: <ErrorComponent />,
+        children: [
+            {
+                path: '/',
+                element: <Body />
+            },
+            {
+                path: '/about',
+                element: <About />
+            }
+        ]
     }
 ]);
 
