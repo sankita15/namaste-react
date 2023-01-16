@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import ErrorComponent from "./component/ErrorComponent";
 
 
 const AppLayout = () => {
@@ -17,7 +18,8 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
     {
         path: "/",
-        element: <AppLayout />
+        element: <AppLayout />,
+        errorElement: <ErrorComponent />
     }
 ]);
 
