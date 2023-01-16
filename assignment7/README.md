@@ -5,3 +5,6 @@ Daawat Loading State
 
 Daawat Home page 
 ![Daawat App](./assets/daawat_homepage.png "Title")
+
+Daawat Restaurant menu page
+![Daawat App](./assets/daawat_menu_items.png "Title")

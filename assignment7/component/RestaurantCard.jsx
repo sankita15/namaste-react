@@ -1,8 +1,8 @@
 import React from "react";
-import './../styles/restaurant.css'
+import '../styles/restaurantCard.css'
 import { IMG_CDN } from "../data/constants";
 
-export const Restaurant = (props) => {
+export const RestaurantCard = (props) => {
     const { restaurant } = props;
     const imageUrl = `${IMG_CDN}${restaurant.cloudinaryImageId}`
 

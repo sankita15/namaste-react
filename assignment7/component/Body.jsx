@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
 import SearchComponent from "./SearchComponent";
-import {Restaurant} from "./Restaurant";
+import { RestaurantCard } from "./RestaurantCard";
 import './../styles/body.css';
 import Loader from "./Loader";
+import {Link} from "react-router-dom";
 
 const Body = () => {
     const [searchText, setSearchText] = useState("");
@@ -42,9 +43,9 @@ const Body = () => {
                 {
                     isLoading ? <Loader /> :
                     filteredRestaurants.map((filteredRestaurant) => {
-                        return <Restaurant restaurant={filteredRestaurant.data}
-                                        key={filteredRestaurant.data.id}>
-                            </Restaurant>;
+                        return <Link to={`restaurants/${filteredRestaurant.data.id}`} className={"restaurant"} key={filteredRestaurant.data.id}>
+                            <RestaurantCard restaurant={filteredRestaurant.data} />
+                        </Link>;
                     })
                 }
             </div>
