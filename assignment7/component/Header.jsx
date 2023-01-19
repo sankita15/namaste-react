@@ -4,11 +4,8 @@ import './../styles/header.css'
 import {Link} from "react-router-dom";
 
 const Header = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-    const toggle = () => {
-        setIsLoggedIn((prevState) => !prevState)
-    }
+    const logout = () => window.location.href = 'http://localhost:1234/'
 
     return (
         <div className="header-container">
@@ -20,7 +17,7 @@ const Header = () => {
                 <li>Offers</li>
                 <li>Cart</li>
             </ul>
-            <button className="login-btn" onClick={toggle}>{isLoggedIn ? 'Login' : 'Log out'}</button>
+            <button className="logout-btn" onClick={logout}>Log out</button>
         </div>
     );
 }
