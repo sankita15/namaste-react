@@ -64,6 +64,7 @@ Ans. It follows the below order:
 --------------- Render Phase
 1. Constructor
 2. Render
+
 --------------- Commit Phase
 3. ComponentDidMount
 4. Re-render if any state change
@@ -77,6 +78,7 @@ Ans. It follows the below order:
 2. Parent render
 3. Child constructor
 4. Child render
+
 --------------- Commit Phase
 5. Child componentDidMount
 6. Parent componentDidMount
@@ -88,7 +90,8 @@ Ans. It follows the below order:
 3. Child constructor 1
 4. Child render 1
 5. Child constructor 2
-6. Child render 2
+6. Child render 2 
+
 --------------- Commit Phase
 7. Child componentDidMount 1
 8. Child componentDidMount 2
@@ -102,7 +105,8 @@ it will show child constructor 2/
 1. Parent constructor
 2. Parent render
 3. Child constructor
-4. Child render
+4. Child render 
+
 --------------- Commit Phase
 5. Parent componentDidMount
 6. Child componentDidMount
