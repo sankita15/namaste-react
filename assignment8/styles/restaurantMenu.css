@@ -1,0 +1,16 @@
+.restaurant-menu-container {
+    display: flex;
+    margin: 20px;
+}
+
+.restaurant-image {
+    border-radius: 5px;
+    width: 35%;
+    height: 100%;
+}
+
+.menu-list {
+    font-size: 20px;
+    font-family: "Apple Chancery", serif;
+    margin-left: 55px;
+}
