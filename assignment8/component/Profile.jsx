@@ -23,12 +23,11 @@ class Profile extends Component {
 
     render() {
         const {imageId, response} = this.state
-        console.log(response, 'response')
         const {orders} = response?.data
         return (
             orders.map((order) => {
                 return (
-                    <div>
+                    <div key={order.order_id}>
                     <div className="profile-container">
                             <img src={`${imageId}${order.order_items.image_id}`} alt={imageId} className={'image'}/>
                             <div className={'restaurant-detail-container'}>

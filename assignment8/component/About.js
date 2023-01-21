@@ -1,10 +1,10 @@
 import React from "react";
-import Profile from "./Profile";
+import {Outlet} from "react-router-dom";
 
 const About = () => {
     return (<div>
         <h2 style={{marginLeft: 20}}>Food delivery app</h2>
-        <Profile />
+        <Outlet />
     </div>)
 }
 
