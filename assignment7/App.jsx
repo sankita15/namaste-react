@@ -20,7 +20,7 @@ const AppLayout = () => {
 
 const appRouter = createBrowserRouter([
     {
-        path: '/',
+        path: '/login',
         element: <LoginPage />
     },
     {
@@ -29,7 +29,7 @@ const appRouter = createBrowserRouter([
         errorElement: <ErrorComponent />,
         children: [
             {
-                path: '/home',
+                path: '/',
                 element: <Body />
             },
             {

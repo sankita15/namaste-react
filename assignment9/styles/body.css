@@ -1,0 +1,21 @@
+.restaurant-list-container {
+    width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurant-list-container > .restaurant {
+    width: 25%;
+    margin: 20px;
+    border: 1px solid darkred;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

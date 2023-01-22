@@ -10,7 +10,7 @@ const LoginPage = () => {
             password: ''
         },
         onSubmit: () => {
-            window.location.href = "http://localhost:1234/home"
+            window.location.href = "http://localhost:1234/"
         },
     });
 
