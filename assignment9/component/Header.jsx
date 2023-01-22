@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React from "react";
 import logo from '../assets/logo.png'
 import './../styles/header.css'
 import {Link} from "react-router-dom";
+import useNetworkStatus from "../hooks/useNetworkStatus";
 
 const Header = () => {
 
-    const logout = () => window.location.href = 'http://localhost:1234/'
+    const isOnline = useNetworkStatus();
+
+    const logout = () => window.location.href = 'http://localhost:1234/login'
 
     return (
         <div className="header-container">
@@ -17,6 +20,7 @@ const Header = () => {
                 <li>Offers</li>
                 <li>Cart</li>
             </ul>
+            <div className='network-status' style={isOnline ? {backgroundColor: "green"}: {backgroundColor: "darkred"}} />
             <button className="logout-btn" onClick={logout}>Log out</button>
         </div>
     );

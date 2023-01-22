@@ -2,6 +2,7 @@ import React from "react";
 import logo from '../assets/logo.png'
 import './../styles/login.css'
 import {useFormik} from "formik";
+import useAuth from "../hooks/useAuth";
 
 const LoginPage = () => {
     const formik = useFormik({
@@ -10,9 +11,12 @@ const LoginPage = () => {
             password: ''
         },
         onSubmit: () => {
-            window.location.href = "http://localhost:1234/"
+            if(isAuthenticated) {
+                window.location.href = "http://localhost:1234/"
+            }
         },
     });
+    const isAuthenticated = useAuth(formik.values)
 
     return (
         <form className="login" onSubmit={formik.handleSubmit}>
@@ -34,6 +38,7 @@ const LoginPage = () => {
             />
             </div>
             <button type="submit" className="login-btn">Login</button>
+            {!isAuthenticated && <div className='error-msg'>Email or Password is incorrect</div>}
         </form>
     )
 }
