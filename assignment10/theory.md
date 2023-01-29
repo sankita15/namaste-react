@@ -1,60 +1,62 @@
-# Assignment 9 Questions
+# Assignment 10 Questions
 
-### Ques1. When and why do we need lazy()?
-Ans. The React.lazy function lets you render a dynamic import as a regular component.
-Before:
+### Ques1. Explore all the ways of writing css.
+Ans. We can write css by 3 ways
+* inline css
+* class based css -> where we create class names and then have css files to hold styles in that class
+* using styles tag -> where we can write css as an object.
+
+
+### Ques2. How do we configure tailwind?
+Ans. We can set up tailwind with parcel by following below link:
+https://tailwindcss.com/docs/guides/parcel
+
+once we set it up we will have tailwind.config.js file where we can configure tailwind.
+
+
+### Ques3. In tailwind.config.js, what does all the keys mean (content, theme, extend, plugins)?
+Ans. 
+* content: The content section is where you configure the paths to all of your HTML templates, 
+JS components, and any other files that contain Tailwind class names.
+
+
+* theme: The theme section is where you define your color palette, fonts, type scale, border sizes, 
+breakpoints — anything related to the visual design of your site.
+
+* plugins: The plugins section allows you to register plugins with Tailwind that can be used to generate extra 
+utilities, components, base styles, or custom variants.
 ```jsx
-import OtherComponent from './OtherComponent';
-```
-After:
-```jsx
-const OtherComponent = React.lazy(() => import('./OtherComponent'));
-```
-
-This will automatically load the bundle containing the OtherComponent when this component is first rendered.
-React.lazy takes a function that must call a dynamic import(). This must return a Promise which resolves to a 
-module with a default export containing a React component.
-
-
-### Ques2. What is suspense?
-Ans. The lazy component should then be rendered inside a Suspense component, which allows us to show some fallback 
-content (such as a loading indicator) while we’re waiting for the lazy component to load.
-```jsx
-import React, { Suspense } from 'react';
-
-const OtherComponent = React.lazy(() => import('./OtherComponent'));
-
-function MyComponent() {
-  return (
-    <div>
-      <Suspense fallback={<div>Loading...</div>}>
-        <OtherComponent />
-      </Suspense>
-    </div>
-  );
+module.exports = {
+  // ...
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/typography'),
+    require('tailwindcss-children'),
+  ],
 }
 ```
 
-The fallback prop accepts any React elements that you want to render while waiting for the component to load. You can 
-place the Suspense component anywhere above the lazy component. You can even wrap multiple lazy components with a 
-single Suspense component.
-
-
-### Ques3. Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition?How does suspense fix this error?
-
-Ans. There are sometimes when component under suspense takes sometime to render, but we also don't want to show loader 
-or the fallback component then we can tell react to show the old component only and render the new one when its ready 
-using startTransition method.
-
-Transitions are a new concurrent feature introduced in React 18. They allow you to mark updates as transitions, 
-which tells React that they can be interrupted and avoid going back to Suspense fallbacks for already visible content.
+* extend: For extending the default spacing scale, you can do by using the *theme.extend.spacing* section.
 ```jsx
-React.startTransition(callback)
+module.exports = {
+  theme: {
+    extend: {
+      spacing: {
+        '13': '3.25rem',
+        '15': '3.75rem',
+        '128': '32rem',
+        '144': '36rem',
+      }
+    }
+  }
+}
 ```
 
-### Ques4. Advantages or disadvantages of code splitting?
-Ans. code splitting can be very helpful in terms of improving the performance as the different bundles can be loaded when required.
-The only drawback about code splitting is that you can only use it in client side rendering. Both the above techniques 
-won't work during server side rendering when it comes to React. This is the reason why the React team recommends using 
-loadable components for code splitting in the server.
 
+### Ques4. Why do we have .postcssrc file?
+Ans. PostCSS is a JavaScript tool that transforms your CSS code into an abstract syntax tree (AST) and then provides an 
+API (application programming interface) for analyzing and modifying it using JavaScript plugins.
+
+So our postcssrc file have tailwindcss plugin which means the css code transformation will also be done using 
+tailwind plugin instead of just javascript plugin.
