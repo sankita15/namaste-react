@@ -40,7 +40,7 @@ const Body = () => {
             <SearchComponent searchText={searchText} onChange={handleChange} onClick={handleClick}/>
             <div className="flex flex-wrap w-10/12 h-full mx-auto">
                 {
-                    !isLoading ? <Loader/> :
+                    isLoading ? <Loader/> :
                         filteredRestaurants?.map((filteredRestaurant) => {
                             return <Link to={`restaurants/${filteredRestaurant.data.id}`} className={"m-4"}
                                          key={filteredRestaurant.data.id}>
